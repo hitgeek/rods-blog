@@ -1,0 +1,10 @@
+extend ../_layout.pug
+
+block admin_content
+  table.table.table-striped
+    each b in blogs
+      tr
+        td: a(href='/admin/blogs/' + b.id + '/view')= b.name
+        td= moment(b.created_at).format('M/D/YYYY')
+      tr
+        td= b.description

@@ -1,0 +1,16 @@
+extends ../_layout.pug
+
+block content
+  br
+  .container
+    .jumbotron
+      h1= blog.name
+      p= blog.description
+    each a in blog.articles
+      h3= a.title
+        small= " " + moment(a.created_at).format('M/D/YYYY')
+      i= a.user.name
+      .well= a.content
+
+
+

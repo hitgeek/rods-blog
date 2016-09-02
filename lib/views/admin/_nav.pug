@@ -1,0 +1,28 @@
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='#') rods-blog
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li(class= path.indexOf('dashboard') > -1 ? 'active' : null): a(href='/admin/dashboard') Dashboard
+        li(class= path.indexOf('blogs') > -1 ? 'active' : null): a(href='/admin/blogs') Blogs
+        li(class= path.indexOf('articles') > -1 ? 'active' : null): a(href='/admin/articles') Articles
+        li: a(href='#') Comments
+        li.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+            | New
+            span.caret
+          ul.dropdown-menu
+            li: a(href='/admin/blogs/new') Blog
+            li.divider
+            li: a(href='/admin/articles/new') Article
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='/logout') Log Out
+    // /.nav-collapse
+  // /.container-fluid

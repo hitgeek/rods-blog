@@ -1,0 +1,12 @@
+mixin article(a)
+  .form-group
+    label Blog
+    select.form-control(name='blog_id')
+      each b in blogs
+        option(value=b.id)= b.name
+  .form-group
+    label Title
+    input.form-control(type='text', name='title')
+  .form-group
+    label Content
+    textarea.form-control(type='text', name='content')

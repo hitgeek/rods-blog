@@ -1,0 +1,11 @@
+extend ../_layout.pug
+include ./_form.pug
+
+block admin_content
+  form(method='POST')
+    .panel.panel-default
+      .panel-heading Blog
+      .panel-body
+        +blog()
+      .panel-footer
+        button.btn.btn-primary(type='Submit') Save

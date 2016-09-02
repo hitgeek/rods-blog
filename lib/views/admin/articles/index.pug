@@ -1,0 +1,11 @@
+extend ../_layout.pug
+
+block admin_content
+  table.table
+    each a in articles
+      tr
+        td= a.blog.name
+        td= moment(a.created_at).format('M/D/YYYY')
+        td: a(href='/admin/articles/' + a.id + '/view')= a.title
+        td: a.text-warning(): i.fa.fa-pencil
+        td: a.text-danger(): i.fa.fa-trash

@@ -1,0 +1,9 @@
+extend ../_layout.pug
+
+block admin_content
+  i= article.blog.name
+  hr
+  .well= article.content
+  hr
+  h2 Comments
+  table.table
